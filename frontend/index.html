@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TaskFlow — organiza tu día con calma y claridad."
+    />
+    <meta name="theme-color" content="#f8f6f1" />
+    <link rel="icon" href="data:," />
+    <title>TaskFlow — Organiza tu día</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="TaskFlow, inicio">
+        <span class="wordmark-symbol" aria-hidden="true">T</span>
+        <span>taskflow<span class="wordmark-period">.</span></span>
+      </a>
+
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-label="Abrir navegación"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span class="menu-glyph" aria-hidden="true"></span>
+      </button>
+
+      <nav
+        class="primary-nav"
+        id="primary-nav"
+        aria-label="Navegación principal"
+      >
+        <button class="primary-nav-link is-active" type="button" data-view="dashboard">
+          Mi día
+        </button>
+        <button class="primary-nav-link" type="button" data-view="all">
+          Todas <span class="nav-link-count" data-count="all">0</span>
+        </button>
+        <button class="primary-nav-link" type="button" data-view="pending">
+          Pendientes <span class="nav-link-count" data-count="pending">0</span>
+        </button>
+        <button class="primary-nav-link" type="button" data-view="progress">
+          En curso <span class="nav-link-count" data-count="progress">0</span>
+        </button>
+        <button class="primary-nav-link" type="button" data-view="completed">
+          Hechas <span class="nav-link-count" data-count="completed">0</span>
+        </button>
+        <button class="primary-nav-link nav-settings" type="button" data-view="settings">
+          Ajustes
+        </button>
+      </nav>
+
+      <button class="header-profile" type="button" aria-label="Perfil de usuario">
+        <span class="header-profile-avatar" aria-hidden="true">TF</span>
+        <span class="header-profile-name">Mi espacio</span>
+        <span class="profile-chevron" aria-hidden="true">⌄</span>
+      </button>
+    </header>
+
+    <main class="main-area">
+      <div class="utility-bar">
+        <div class="utility-context">
+          <span class="utility-mark" aria-hidden="true"></span>
+          <span>Tu espacio personal</span>
+          <span class="api-status" data-api-status>Conectando…</span>
+        </div>
+        <div class="utility-actions">
+          <label class="search-box">
+            <span class="search-glyph" aria-hidden="true"></span>
+            <input
+              type="search"
+              data-search
+              placeholder="Buscar en tu agenda"
+              aria-label="Buscar tareas"
+            />
+          </label>
+          <button class="quick-add" type="button" data-action="new-task">
+            <span class="plus-glyph" aria-hidden="true">+</span>
+            Nueva tarea
+          </button>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="feedback" data-feedback role="status" aria-live="polite" hidden></div>
+        <section id="page-content" aria-live="polite" aria-busy="true">
+          <p class="loading-message">Preparando tu agenda…</p>
+        </section>
+        <div class="demo-note">
+          Tus tareas se consultan desde la API. No se guardan en este navegador.
+        </div>
+      </div>
+    </main>
+
+    <div id="modal-root"></div>
+    <div class="sr-only" data-announcer aria-live="polite"></div>
+  </body>
+</html>
